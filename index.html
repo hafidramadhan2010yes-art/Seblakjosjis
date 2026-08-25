@@ -4,7 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeblakShop 🌶️</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff5e6;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff4d00, #ff9d00);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .hero h2 {
+      color: #e63900;
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: #777;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    }
+
+    .emoji {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #e63900;
+    }
+
+    .card p {
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .harga {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    button {
+      border: none;
+      background: #ff4d00;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d93600;
+    }
+
+    .keranjang {
+      background: white;
+      margin: 25px 20px;
+      padding: 22px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    }
+
+    .keranjang h2 {
+      color: #e63900;
+      margin-bottom: 10px;
+    }
+
+    #pesanan {
+      margin: 12px 0;
+      line-height: 1.8;
+    }
+
+    .pesan {
+      width: 100%;
+      margin-top: 10px;
+      background: #25d366;
+      font-size: 17px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #222;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,258 +145,119 @@
   </header>
 
   <section class="hero">
-    <h2>Mau Seblak Apa Hari Ini?</h2>
-    <p>Pilih menu favoritmu 👇</p>
+    <h2>Mau Seblak Apa Hari Ini? 🔥</h2>
+    <p>Pilih menu favorit kamu!</p>
   </section>
 
   <main class="menu">
 
     <div class="card">
-      <div class="emoji">🍜</div>
+      <div class="emoji">🍲</div>
       <h3>Seblak Original</h3>
-      <p>Kerupuk, telur, sayur</p>
-      <strong>Rp10.000</strong>
-      <button onclick="tambah('Seblak Original', 10000)">
-        + Keranjang
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="emoji">🌶️</div>
-      <h3>Seblak Pedas</h3>
-      <p>Level pedas yang bikin nagih</p>
-      <strong>Rp13.000</strong>
-      <button onclick="tambah('Seblak Pedas', 13000)">
-        + Keranjang
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="emoji">🍗</div>
-      <h3>Seblak Komplit</h3>
-      <p>Telur, ceker, bakso, sosis</p>
-      <strong>Rp18.000</strong>
-      <button onclick="tambah('Seblak Komplit', 18000)">
+      <p>Kerupuk, telur, dan sayuran</p>
+      <div class="harga">Rp10.000</div>
+      <button onclick="tambah('Seblak Original',10000)">
         + Keranjang
       </button>
     </div>
 
     <div class="card">
       <div class="emoji">🔥</div>
+      <h3>Seblak Pedas</h3>
+      <p>Pedas mantap untuk pecinta cabai</p>
+      <div class="harga">Rp15.000</div>
+      <button onclick="tambah('Seblak Pedas',15000)">
+        + Keranjang
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍜</div>
+      <h3>Seblak Mie</h3>
+      <p>Perpaduan seblak dan mie yang nikmat</p>
+      <div class="harga">Rp18.000</div>
+      <button onclick="tambah('Seblak Mie',18000)">
+        + Keranjang
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🌶️</div>
       <h3>Seblak Special</h3>
       <p>Isian lengkap + level pedas</p>
-      <strong>Rp22.000</strong>
-      <button onclick="tambah('Seblak Special', 22000)">
+      <div class="harga">Rp22.000</div>
+      <button onclick="tambah('Seblak Special',22000)">
         + Keranjang
       </button>
     </div>
 
   </main>
 
-  <section class="cart">
+  <section class="keranjang">
     <h2>🛒 Keranjang</h2>
 
-    <div id="keranjang">
-      <p>Keranjang masih kosong.</p>
+    <div id="pesanan">
+      Keranjang masih kosong.
     </div>
 
     <h3>Total: <span id="total">Rp0</span></h3>
 
-    <button class="pesan" onclick="pesan()">
+    <button class="pesan" onclick="pesanSekarang()">
       📱 Pesan Sekarang
     </button>
   </section>
 
   <footer>
-    <p>© 2026 SeblakShop 🌶️</p>
+    © 2026 SeblakShop 🌶️
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    let keranjang = [];
+    let total = 0;
+
+    function tambah(nama, harga) {
+      keranjang.push({ nama, harga });
+      total += harga;
+
+      tampilkanKeranjang();
+    }
+
+    function tampilkanKeranjang() {
+      let pesanan = document.getElementById("pesanan");
+
+      if (keranjang.length === 0) {
+        pesanan.innerHTML = "Keranjang masih kosong.";
+        return;
+      }
+
+      pesanan.innerHTML = keranjang
+        .map(item => `🍲 ${item.nama} - Rp${item.harga.toLocaleString("id-ID")}`)
+        .join("<br>");
+
+      document.getElementById("total").innerText =
+        "Rp" + total.toLocaleString("id-ID");
+    }
+
+    function pesanSekarang() {
+      if (keranjang.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+
+      let pesan = "Halo SeblakShop! Saya mau pesan:%0A";
+
+      keranjang.forEach(item => {
+        pesan += `- ${item.nama} Rp${item.harga.toLocaleString("id-ID")}%0A`;
+      });
+
+      pesan += `%0ATotal: Rp${total.toLocaleString("id-ID")}`;
+
+      window.open(
+        "https://wa.me/6285715337492?text=" + pesan,
+        "_blank"
+      );
+    }
+  </script>
+
 </body>
-</html>* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #fff4e6;
-  color: #333;
-}
-
-header {
-  background: linear-gradient(135deg, #ff3d00, #ff7b00);
-  color: white;
-  text-align: center;
-  padding: 35px 20px;
-}
-
-header h1 {
-  font-size: 38px;
-  margin-bottom: 8px;
-}
-
-.hero {
-  text-align: center;
-  padding: 30px 15px 15px;
-}
-
-.hero h2 {
-  color: #e53900;
-  margin-bottom: 8px;
-}
-
-.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.emoji {
-  font-size: 55px;
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: #777;
-  margin-bottom: 12px;
-}
-
-.card strong {
-  display: block;
-  color: #e53900;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-button {
-  border: none;
-  background: #ff3d00;
-  color: white;
-  padding: 11px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #d92f00;
-}
-
-.cart {
-  background: white;
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-}
-
-.cart h2 {
-  margin-bottom: 15px;
-  color: #e53900;
-}
-
-.item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.cart h3 {
-  margin: 18px 0;
-}
-
-.pesan {
-  width: 100%;
-  background: #25d366;
-  font-size: 16px;
-}
-
-.pesan:hover {
-  background: #1da851;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #222;
-  color: white;
-  margin-top: 30px;
-}let keranjang = [];
-let total = 0;
-
-function tambah(nama, harga) {
-  keranjang.push({
-    nama: nama,
-    harga: harga
-  });
-
-  total += harga;
-
-  tampilkanKeranjang();
-}
-
-function tampilkanKeranjang() {
-  const tempat = document.getElementById("keranjang");
-  const totalText = document.getElementById("total");
-
-  if (keranjang.length === 0) {
-    tempat.innerHTML = "<p>Keranjang masih kosong.</p>";
-    totalText.textContent = "Rp0";
-    return;
-  }
-
-  tempat.innerHTML = "";
-
-  keranjang.forEach((item) => {
-    tempat.innerHTML += `
-      <div class="item">
-        <span>${item.nama}</span>
-        <strong>Rp${item.harga.toLocaleString("id-ID")}</strong>
-      </div>
-    `;
-  });
-
-  totalText.textContent =
-    "Rp" + total.toLocaleString("id-ID");
-}
-
-function pesan() {
-  if (keranjang.length === 0) {
-    alert("Keranjang masih kosong!");
-    return;
-  }
-
-  let pesan = "Halo, saya mau pesan:%0A";
-
-  keranjang.forEach((item) => {
-    pesan += `- ${item.nama} Rp${item.harga.toLocaleString("id-ID")}%0A`;
-  });
-
-  pesan += `%0ATotal: Rp${total.toLocaleString("id-ID")}`;
-
-  alert("Pesanan sudah siap! Nanti kita sambungkan ke WhatsApp.");
-}
+</html>
